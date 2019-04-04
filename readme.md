@@ -22,4 +22,3 @@ This is an example application built on Laravel and Bootstrap for beginners.
 ```bash
     php artisan serve
 ```
-> This is the initial state of the application and no changes have been made.
