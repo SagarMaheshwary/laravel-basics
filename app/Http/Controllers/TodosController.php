@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Todo;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,32 @@ class TodosController extends Controller
     */
 
     /**
+     * PHP magic method that runs when the
+     * class instance is created.
+     * 
+     * @return void
+     */
+    public function __construct(){
+
+        /**
+         * Only authenticated users may access 
+         * all the methods.
+         * 
+         * Note: pass an array of strings if you
+         * have multiple middleware.
+         */
+        $this->middleware('auth');
+
+        /**
+         * Chain it with except('method') method
+         * if you want to exclude certain methods.
+         * 
+         * Note: Just like middleware except() can also
+         * take an array of strings.
+         */
+    }
+
+    /**
      * Display the the Todos.
      *
      * @return \Illuminate\Http\Response
@@ -24,7 +51,10 @@ class TodosController extends Controller
     public function index()
     {
         //get all the todos with pagination.
-        $todos = Todo::orderBy('created_at','desc')->paginate(8);
+        $todos = Auth::user()
+            ->todos()
+            ->orderBy('created_at','desc')
+            ->paginate(8);
 
         //return a view with all the todos.
         return view('todos.index',[
@@ -68,6 +98,7 @@ class TodosController extends Controller
         $todo        = new Todo;
         $todo->title = $request->title;
         $todo->body  = $request->body;
+        $todo->user_id = Auth::id();
         $todo->save(); // save it to the database.
 
         //Redirect to a specified route with flash message.

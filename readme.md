@@ -12,7 +12,7 @@ This is an example application built on Laravel and Bootstrap for beginners.
   composer install
 ```
 
-- rename .env.example to .env and add your database and mail driver credentials.
+- rename .env.example to .env and add your database.
 
 - generate application key.
 
@@ -38,3 +38,7 @@ This is an example application built on Laravel and Bootstrap for beginners.
 - Todos CRUD.
 - Form Validation.
 - Flash Messages.
+- Authentication.
+
+
+Star the repo to show your love!!
