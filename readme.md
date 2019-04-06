@@ -40,5 +40,10 @@ This is an example application built on Laravel and Bootstrap for beginners.
 - Flash Messages.
 - Authentication.
 
+## Tutorial Links
+- [Laravel 5.8 From Scratch: Intro, Setup , MVC Basics, and Views (Part 1)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-intro-setup-mvc-basics-and-views-74d46f93fe0c)
+- [Laravel 5.8 From Scratch: Config, ENV, Migrations, and Todos CRUD (Part 2)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-config-env-migrations-and-todos-crud-7c771bcac802)
+- Authentication Coming soon!
+- Eloquent Relationships Coming soon!
 
 Star the repo to show your love!!
