@@ -12,7 +12,7 @@ This is an example application built on Laravel and Bootstrap for beginners.
   composer install
 ```
 
-- rename .env.example to .env and add your database.
+- rename .env.example to .env and add your database and mail driver credentials ([mailtrap](https://mailtrap.io) is preferred).
 
 - generate application key.
 
@@ -39,6 +39,9 @@ This is an example application built on Laravel and Bootstrap for beginners.
 - Form Validation.
 - Flash Messages.
 - Authentication.
+- Email Verification.
+- Password Reset.
+- Eloquent One to Many and Many to One Relationship.
 
 ## Tutorial Links
 - [Laravel 5.8 From Scratch: Intro, Setup , MVC Basics, and Views (Part 1)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-intro-setup-mvc-basics-and-views-74d46f93fe0c)
@@ -46,4 +49,4 @@ This is an example application built on Laravel and Bootstrap for beginners.
 - Authentication Coming soon!
 - Eloquent Relationships Coming soon!
 
-Star the repo to show your love!!
+#### <p style="text-align: center;">Star the repo to show your love!!</p>

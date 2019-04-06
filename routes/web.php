@@ -25,7 +25,7 @@ Route::resource('/todos','TodosController');
 /**
  * Auth Route(s)
  */
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 /**
  * Dashboard Route
