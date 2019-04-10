@@ -53,6 +53,6 @@ This is an example application built on Laravel and Bootstrap for beginners.
 - [Laravel 5.8 From Scratch: Intro, Setup , MVC Basics, and Views (Part 1)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-intro-setup-mvc-basics-and-views-74d46f93fe0c)
 - [Laravel 5.8 From Scratch: Config, ENV, Migrations, and Todos CRUD (Part 2)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-config-env-migrations-and-todos-crud-7c771bcac802)
 - [Laravel 5.8 From Scratch: Authentication, Middleware, Email Verify and Password Reset (Part 3)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-authentication-middleware-email-verify-and-password-reset-93a4b2103794)
-- Eloquent Relationships and Image Upload Coming soon!
+- [Laravel 5.8 From Scratch: Eloquent Relationships and Image Upload (Part 4)](https://medium.com/@sagarmaheshwary31/laravel-5-8-from-scratch-eloquent-relationships-and-image-upload-49daece52a24)
 
-<p style="text-align: center;">Star the repo to show your love!!</p>
+- <p style="text-align: center;">Star the repo to show your love!!</p>
