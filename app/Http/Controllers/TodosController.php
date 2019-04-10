@@ -50,11 +50,11 @@ class TodosController extends Controller
      */
     public function index()
     {
-        //get all the todos with pagination.
-        $todos = Auth::user()
-            ->todos()
-            ->orderBy('created_at','desc')
-            ->paginate(8);
+        //get the authentication user.
+        $user = Auth::user();
+
+        //get all the todos that belong to the user with pagination.
+        $todos = $user->todos()->orderBy('created_at','desc')->paginate(8);
 
         //return a view with all the todos.
         return view('todos.index',[
@@ -95,9 +95,9 @@ class TodosController extends Controller
         $request->validate($rules,$messages);
 
         //Create a Todo
-        $todo        = new Todo;
-        $todo->title = $request->title;
-        $todo->body  = $request->body;
+        $todo          = new Todo;
+        $todo->title   = $request->title;
+        $todo->body    = $request->body;
         $todo->user_id = Auth::id();
         $todo->save(); // save it to the database.
 
