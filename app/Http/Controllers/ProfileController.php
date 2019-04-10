@@ -68,14 +68,23 @@ class ProfileController extends Controller
         
         //check for file.
         if($request->hasFile('image')){
-            //upload the image.
-            $image = $this->uploadImage($request);
+            //get image file.
+            $image = $request->image;
+            
+            //get just extension.
+            $ext = $image->getClientOriginalExtension();
+            
+            //make a unique name
+            $filename = uniqid().'.'.$ext;
+            
+            //upload the image
+            $image->storeAs('public/pics',$filename);
 
             //delete the previous image.
             Storage::delete("public/pics/{$user->image}");
             
             //this column has a default value so don't to set it empty.
-            $user->image = $image;
+            $user->image = $filename;
         }
         
         //if password field is left empty then don't update the password.
@@ -88,27 +97,5 @@ class ProfileController extends Controller
         return redirect()
             ->route('profile.index')
             ->with('status','Your profile has been updated!');
-    }
-
-    /**
-     * Upload the user profile image and return the uploaded
-     * image name.
-     * 
-     * @param \Illuminate\Http\Request $request
-     * @return string
-     */
-    private function uploadImage(Request $request){
-        //get the filename with extension
-        $filenameWithExt = $request->file('image')->getClientOriginalName();
-        //get just filename
-        $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-        //get just extension
-        $extension = $request->file('image')->getClientOriginalExtension();
-        //filename to store
-        $filenameToStore = $filename.'_'.time().'.'.$extension;
-        //upload the image
-        $request->file('image')->storeAs('public/pics',$filenameToStore);
-
-        return $filenameToStore;
     }
 }
